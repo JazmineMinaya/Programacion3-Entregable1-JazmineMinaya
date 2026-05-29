@@ -4,6 +4,20 @@ public class Profesor {
     private String apellidoProfesor;
     private String especialidad;
 
+    public Profesor() {
+        setCodigoProfesor("");
+        setNombreProfesor("");
+        setApellidoProfesor("");
+        setEspecialidad("");
+    }
+
+    public Profesor(String codigoProfesor, String nombreProfesor, String apellidoProfesor, String especialidad) {
+        setCodigoProfesor(codigoProfesor);
+        setNombreProfesor(nombreProfesor);
+        setApellidoProfesor(apellidoProfesor);
+        setEspecialidad(especialidad);
+    }
+
     public String getCodigoProfesor() {
         return codigoProfesor;
     }
