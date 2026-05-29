@@ -1,4 +1,11 @@
+import java.util.Scanner;
+import java.time.LocalDate;
+import java.util.ArrayList;
+
 public class Main {
+    static Scanner scanner = new Scanner(System.in);
+    static ArrayList<Estudiante> listaEstudiantes = new ArrayList<>();
+
     public static void mostrarMenu() {
         System.out.println("\n====================================");
         System.out.println("    SISTEMA DE GESTION ACADEMICA");
@@ -15,7 +22,35 @@ public class Main {
         System.out.println("10. Salir");
     }
 
+    public static void registrarEstudiante() {
+        System.out.println("\nREGISTRAR ESTUDIANTE:\n");
+
+        System.out.print("Ingrese la matrícula: ");
+        String matricula = scanner.nextLine();
+
+        System.out.print("Ingrese el nombre: ");
+        String nombreEstudiante = scanner.nextLine();
+
+        System.out.print("Ingrese el apellido: ");
+        String apellidoEstudiante = scanner.nextLine();
+
+        System.out.print("Ingrese la edad: ");
+        int edad = scanner.nextInt();
+        scanner.nextLine();
+
+        System.out.print("Ingrese la carrera: ");
+        String carrera = scanner.nextLine();
+
+        System.out.print("Ingrese la fecha de inscripción (AAAA-MM-DD): ");
+        String fechaTexto = scanner.nextLine();
+        LocalDate fechaInscripcion = LocalDate.parse(fechaTexto);
+
+        Estudiante estudiante = new Estudiante(matricula, nombreEstudiante, apellidoEstudiante, edad, carrera, fechaInscripcion);
+
+        listaEstudiantes.add(estudiante);
+    }
+
     public static void main(String[] args) {
-        
+
     }
 }
