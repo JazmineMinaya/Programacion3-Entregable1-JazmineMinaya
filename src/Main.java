@@ -6,6 +6,7 @@ public class Main {
     static Scanner scanner = new Scanner(System.in);
     static ArrayList<Estudiante> listaEstudiantes = new ArrayList<>();
     static ArrayList<Profesor> listaProfesores = new ArrayList<>();
+    static ArrayList<Materia> listaMaterias = new ArrayList<>();
 
     public static void mostrarMenu() {
         System.out.println("\n====================================");
@@ -69,6 +70,24 @@ public class Main {
         Profesor profesor = new Profesor(codigoProfesor, nombreProfesor, apellidoProfesor, especialidad);
 
         listaProfesores.add(profesor);
+    }
+
+    public static void registrarMateria() {
+        System.out.println("\nREGISTRAR MATERIA:\n");
+
+        System.out.print("Ingrese el codigo: ");
+        String codigoMateria = scanner.nextLine();
+
+        System.out.print("Ingrese el nombre: ");
+        String nombreMateria = scanner.nextLine();
+
+        System.out.print("Ingrese la cantidad de creditos: ");
+        int cantidadCreditos = scanner.nextInt();
+        scanner.nextLine();
+
+        Materia materia = new Materia(codigoMateria, nombreMateria, cantidadCreditos);
+
+        listaMaterias.add(materia);
     }
 
     public static void main(String[] args) {
