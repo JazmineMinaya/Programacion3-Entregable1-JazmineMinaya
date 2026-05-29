@@ -94,12 +94,12 @@ public class Main {
         System.out.println("\nASIGNAR MATERIA A ESTUDIANTE:\n");
 
         System.out.print("Ingrese el codigo de la materia: ");
-        String materiaAsignar = scanner.nextLine();
+        String codigoMateriaAsignar = scanner.nextLine();
 
         Materia materiaEncontrada = null;
 
         for (Materia m : listaMaterias) {
-            if (m.getCodigoMateria().equals(materiaAsignar)) {
+            if (m.getCodigoMateria().equals(codigoMateriaAsignar)) {
                 materiaEncontrada = m;
                 break;
             }
@@ -113,10 +113,10 @@ public class Main {
         Estudiante estudianteEncontrado = null;
 
         System.out.print("Ingrese la matricula del estudiante: ");
-        String estudianteRegistrarMateria = scanner.nextLine();
+        String matriculaEstudianteRegistrar = scanner.nextLine();
 
         for (Estudiante est : listaEstudiantes) {
-            if (est.getMatricula().equals(estudianteRegistrarMateria)) {
+            if (est.getMatricula().equals(matriculaEstudianteRegistrar)) {
                 estudianteEncontrado = est;
                 break;
             }
