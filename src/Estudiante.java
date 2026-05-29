@@ -1,4 +1,5 @@
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class Estudiante {
     private String matricula;
@@ -8,6 +9,8 @@ public class Estudiante {
     private String carrera;
     private LocalDate fechaInscripcion;
 
+    private ArrayList<Materia> materias;
+
     public Estudiante() {
         setMatricula("");
         setNombreEstudiante("");
@@ -15,6 +18,8 @@ public class Estudiante {
         setEdad(0);
         setCarrera("");
         setFechaInscripcion(null);
+
+        materias = new ArrayList<>();
     }
 
     public Estudiante(String matricula, String nombreEstudiante, String apellidoEstudiante, int edad, String carrera, LocalDate fechaInscripcion) {
@@ -24,6 +29,8 @@ public class Estudiante {
         setEdad(edad);
         setCarrera(carrera);
         setFechaInscripcion(fechaInscripcion);
+
+        materias = new ArrayList<>();
     }
 
     public String getMatricula() {
@@ -43,6 +50,9 @@ public class Estudiante {
     }
     public LocalDate getFechaInscripcion() {
         return fechaInscripcion;
+    }
+    public ArrayList<Materia> getMaterias() {
+        return materias;
     }
 
     public void setMatricula(String matricula) {

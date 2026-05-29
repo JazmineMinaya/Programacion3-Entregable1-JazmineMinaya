@@ -90,6 +90,46 @@ public class Main {
         listaMaterias.add(materia);
     }
 
+    public static void asignarMateriaEstudiante() {
+        System.out.println("\nASIGNAR MATERIA A ESTUDIANTE:\n");
+
+        System.out.print("Ingrese el codigo de la materia: ");
+        String materiaAsignar = scanner.nextLine();
+
+        Materia materiaEncontrada = null;
+
+        for (Materia m : listaMaterias) {
+            if (m.getCodigoMateria().equals(materiaAsignar)) {
+                materiaEncontrada = m;
+                break;
+            }
+        }
+
+        if (materiaEncontrada == null) {
+            System.out.println("\nMateria no encontrada");
+            return;
+        }
+
+        Estudiante estudianteEncontrado = null;
+
+        System.out.print("Ingrese la matricula del estudiante: ");
+        String estudianteRegistrarMateria = scanner.nextLine();
+
+        for (Estudiante est : listaEstudiantes) {
+            if (est.getMatricula().equals(estudianteRegistrarMateria)) {
+                estudianteEncontrado = est;
+                break;
+            }
+        }
+        
+        if (estudianteEncontrado == null) {
+            System.out.println("\nEstudiante no encontrado");
+            return;
+        }
+
+        estudianteEncontrado.getMaterias().add(materiaEncontrada);
+    }
+
     public static void main(String[] args) {
     }
 }
