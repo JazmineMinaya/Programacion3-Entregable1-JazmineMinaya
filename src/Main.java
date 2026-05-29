@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Main {
     static Scanner scanner = new Scanner(System.in);
     static ArrayList<Estudiante> listaEstudiantes = new ArrayList<>();
+    static ArrayList<Profesor> listaProfesores = new ArrayList<>();
 
     public static void mostrarMenu() {
         System.out.println("\n====================================");
@@ -50,7 +51,26 @@ public class Main {
         listaEstudiantes.add(estudiante);
     }
 
-    public static void main(String[] args) {
+    public static void registrarProfesor() {
+        System.out.println("\nREGISTRAR PROFESOR:\n");
 
+        System.out.print("Ingrese el codigo: ");
+        String codigoProfesor = scanner.nextLine();
+
+        System.out.print("Ingrese el nombre: ");
+        String nombreProfesor = scanner.nextLine();
+
+        System.out.print("Ingrese el apellido:  ");
+        String apellidoProfesor = scanner.nextLine();
+
+        System.out.print("Ingrese la especialidad: ");
+        String especialidad = scanner.nextLine();
+
+        Profesor profesor = new Profesor(codigoProfesor, nombreProfesor, apellidoProfesor, especialidad);
+
+        listaProfesores.add(profesor);
+    }
+
+    public static void main(String[] args) {
     }
 }
