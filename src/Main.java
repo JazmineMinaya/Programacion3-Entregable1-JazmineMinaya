@@ -175,6 +175,54 @@ public class Main {
         return null;
     }
     
+    public static void buscarEstudiante() {
+        int opcion = 0;
+
+        do {
+            System.out.println("\nBUSQUEDA DE ESTUDIANTES:\n");
+            System.out.println("  1. Buscar estudiante mediante nombre");
+            System.out.println("  2. Buscar estudiante mediante matricula");
+            System.out.println("  3. Salir al menu principal");
+
+            System.out.print("\nIngrese una opcion: ");
+            opcion = scanner.nextInt();
+            scanner.nextLine();
+
+            switch (opcion) {
+                case 1:
+                    System.out.print("\nIngrese el nombre: ");
+                    String nombre = scanner.nextLine();
+
+                    Estudiante nombreEstudiante  = buscarEstudianteNombre(nombre);
+
+                    if (nombreEstudiante == null)
+                        System.out.println("\nEstudiante no registrado en el sistema");
+                    else
+                        System.out.println("\nEstudiante registrado en el sistema");
+                    break;
+                
+                case 2:
+                    System.out.print("\nIngrese la matricula: ");
+                    String matricula = scanner.nextLine();
+
+                    Estudiante matriculaEstudiante = buscarEstudianteMatricula(matricula);
+
+                    if (matriculaEstudiante == null)
+                        System.out.println("\nEstudiante no registrado en el sistema");
+                    else
+                        System.out.println("\nEstudiante registrado en el sistema");
+                    break;
+                
+                case 3: 
+                    break;
+                
+                default:
+                    System.out.println("\nOpcion invalida");
+                    break;
+            }
+        } while (opcion != 3);
+
+    }
     public static void main(String[] args) {
     }
 }
