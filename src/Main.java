@@ -110,24 +110,15 @@ public class Main {
             return;
         }
 
-        Estudiante estudianteEncontrado = null;
-
         System.out.print("Ingrese la matricula del estudiante: ");
-        String matriculaEstudianteRegistrar = scanner.nextLine();
+        String matriculaEstudiante = scanner.nextLine();
 
-        for (Estudiante est : listaEstudiantes) {
-            if (est.getMatricula().equals(matriculaEstudianteRegistrar)) {
-                estudianteEncontrado = est;
-                break;
-            }
-        }
-        
-        if (estudianteEncontrado == null) {
+        Estudiante estudianteMateriaAsignar = buscarEstudianteMatricula(matriculaEstudiante);
+
+        if (estudianteMateriaAsignar == null) {
             System.out.println("\nEstudiante no encontrado");
             return;
         }
-
-        estudianteEncontrado.getMaterias().add(materiaEncontrada);
     }
 
     public static void registrarCalificacion() {
@@ -136,16 +127,9 @@ public class Main {
         System.out.print("Ingrese la matricula del estudiante: ");
         String matriculaCalificar = scanner.nextLine();
 
-        Estudiante estudianteEncontrado = null;
+        Estudiante estudianteCalificar = buscarEstudianteMatricula(matriculaCalificar);
 
-        for (Estudiante est : listaEstudiantes) {
-            if (est.getMatricula().equals(matriculaCalificar)) {
-                estudianteEncontrado = est;
-                break;
-            }
-        }
-
-        if (estudianteEncontrado == null) {
+        if (estudianteCalificar == null) {
             System.out.println("\nMatricula no encontrada");
             return;
         }
@@ -173,7 +157,7 @@ public class Main {
 
         Calificacion calificacion = new Calificacion(materiaEncontrada, nota);
 
-        estudianteEncontrado.getCalificaciones().add(calificacion);
+        estudianteCalificar.getCalificaciones().add(calificacion);
     }
 
     public static Estudiante buscarEstudianteMatricula(String matricula) {
