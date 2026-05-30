@@ -130,6 +130,52 @@ public class Main {
         estudianteEncontrado.getMaterias().add(materiaEncontrada);
     }
 
+    public static void registrarCalificacion() {
+        System.out.println("\nREGISTRAR CALIFICACION:\n");
+
+        System.out.print("Ingrese la matricula del estudiante: ");
+        String matriculaCalificar = scanner.nextLine();
+
+        Estudiante estudianteEncontrado = null;
+
+        for (Estudiante est : listaEstudiantes) {
+            if (est.getMatricula().equals(matriculaCalificar)) {
+                estudianteEncontrado = est;
+                break;
+            }
+        }
+
+        if (estudianteEncontrado == null) {
+            System.out.println("\nMatricula no encontrada");
+            return;
+        }
+
+        System.out.print("Ingrese el codigo de la materia: ");
+        String codigoMateriaCalificar = scanner.nextLine();
+
+        Materia materiaEncontrada = null;
+
+        for (Materia m : listaMaterias) {
+            if (m.getCodigoMateria().equals(codigoMateriaCalificar)) {
+                materiaEncontrada = m;
+                break;
+            }
+        }
+
+        if (materiaEncontrada == null) {
+            System.out.println("\nMateria no encontrada");
+            return;
+        }
+
+        System.out.print("Ingrese la calificacion: ");
+        double nota = scanner.nextDouble();
+        scanner.nextLine();
+
+        Calificacion calificacion = new Calificacion(materiaEncontrada, nota);
+
+        estudianteEncontrado.getCalificaciones().add(calificacion);
+    }
+
     public static void main(String[] args) {
     }
 }

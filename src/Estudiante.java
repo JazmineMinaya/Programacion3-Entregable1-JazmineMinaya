@@ -10,6 +10,7 @@ public class Estudiante {
     private LocalDate fechaInscripcion;
 
     private ArrayList<Materia> materias;
+    private ArrayList<Calificacion> calificaciones;
 
     public Estudiante() {
         setMatricula("");
@@ -20,6 +21,7 @@ public class Estudiante {
         setFechaInscripcion(null);
 
         materias = new ArrayList<>();
+        calificaciones = new ArrayList<>();
     }
 
     public Estudiante(String matricula, String nombreEstudiante, String apellidoEstudiante, int edad, String carrera, LocalDate fechaInscripcion) {
@@ -31,6 +33,7 @@ public class Estudiante {
         setFechaInscripcion(fechaInscripcion);
 
         materias = new ArrayList<>();
+        calificaciones = new ArrayList<>();
     }
 
     public String getMatricula() {
@@ -53,6 +56,9 @@ public class Estudiante {
     }
     public ArrayList<Materia> getMaterias() {
         return materias;
+    }
+    public ArrayList<Calificacion> getCalificaciones() {
+        return calificaciones;
     }
 
     public void setMatricula(String matricula) {
