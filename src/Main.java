@@ -90,22 +90,24 @@ public class Main {
         listaMaterias.add(materia);
     }
 
+    public static Materia buscarCodigoMateria(String materia) {
+        for (Materia m : listaMaterias) {
+            if (m.getCodigoMateria().equals(materia)) {
+                return m;
+            }
+        }
+        return null;
+    }
+
     public static void asignarMateriaEstudiante() {
         System.out.println("\nASIGNAR MATERIA A ESTUDIANTE:\n");
 
         System.out.print("Ingrese el codigo de la materia: ");
         String codigoMateriaAsignar = scanner.nextLine();
 
-        Materia materiaEncontrada = null;
+        Materia materiaAsignar = buscarCodigoMateria(codigoMateriaAsignar);
 
-        for (Materia m : listaMaterias) {
-            if (m.getCodigoMateria().equals(codigoMateriaAsignar)) {
-                materiaEncontrada = m;
-                break;
-            }
-        }
-
-        if (materiaEncontrada == null) {
+        if (materiaAsignar == null) {
             System.out.println("\nMateria no encontrada");
             return;
         }
@@ -119,6 +121,8 @@ public class Main {
             System.out.println("\nEstudiante no encontrado");
             return;
         }
+
+        estudianteMateriaAsignar.getMaterias().add(materiaAsignar);
     }
 
     public static void registrarCalificacion() {
@@ -137,16 +141,9 @@ public class Main {
         System.out.print("Ingrese el codigo de la materia: ");
         String codigoMateriaCalificar = scanner.nextLine();
 
-        Materia materiaEncontrada = null;
+        Materia materiaCalificar = buscarCodigoMateria(codigoMateriaCalificar);
 
-        for (Materia m : listaMaterias) {
-            if (m.getCodigoMateria().equals(codigoMateriaCalificar)) {
-                materiaEncontrada = m;
-                break;
-            }
-        }
-
-        if (materiaEncontrada == null) {
+        if (materiaCalificar == null) {
             System.out.println("\nMateria no encontrada");
             return;
         }
@@ -155,7 +152,7 @@ public class Main {
         double nota = scanner.nextDouble();
         scanner.nextLine();
 
-        Calificacion calificacion = new Calificacion(materiaEncontrada, nota);
+        Calificacion calificacion = new Calificacion(materiaCalificar, nota);
 
         estudianteCalificar.getCalificaciones().add(calificacion);
     }
