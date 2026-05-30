@@ -168,7 +168,7 @@ public class Main {
 
     public static Estudiante buscarEstudianteNombre(String nombre) {
         for (Estudiante est : listaEstudiantes) {
-            if (est.getMatricula().equalsIgnoreCase(nombre)) {
+            if (est.getNombreEstudiante().equalsIgnoreCase(nombre)) {
                 return est;
             }
         }
