@@ -176,6 +176,24 @@ public class Main {
         estudianteEncontrado.getCalificaciones().add(calificacion);
     }
 
+    public static Estudiante buscarEstudianteMatricula(String matricula) {
+        for (Estudiante est : listaEstudiantes) {
+            if (est.getMatricula().equals(matricula)) {
+                return est;
+            }
+        }
+        return null;
+    }
+
+    public static Estudiante buscarEstudianteNombre(String nombre) {
+        for (Estudiante est : listaEstudiantes) {
+            if (est.getMatricula().equalsIgnoreCase(nombre)) {
+                return est;
+            }
+        }
+        return null;
+    }
+    
     public static void main(String[] args) {
     }
 }
