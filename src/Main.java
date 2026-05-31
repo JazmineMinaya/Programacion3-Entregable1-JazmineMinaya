@@ -250,5 +250,48 @@ public class Main {
     }
 
     public static void main(String[] args) {
+        int opcion = 0;
+
+        do {
+            mostrarMenu();
+
+            System.out.print("\nIngrese una opcion: ");
+            opcion = scanner.nextInt();
+            scanner.nextLine();
+
+            switch(opcion) {
+                case 1:
+                    registrarEstudiante();
+                    break;
+                
+                case 2:
+                    registrarProfesor();
+                    break;
+
+                case 3:
+                    registrarMateria();
+                    break;
+
+                case 4:
+                    asignarMateriaEstudiante();
+                    break;
+
+                case 5:
+                    registrarCalificacion();
+                    break;
+                
+                case 6:
+                    buscarEstudiante();
+                    break;
+                
+                case 7:
+                    mostrarDatosEstudiante();
+                    break;
+                
+                case 8:
+                    mostrarDatosMateria();
+                    break;
+            }
+        } while (opcion != 10);
     }
 }
