@@ -315,6 +315,13 @@ public class Main {
                 case 9:
                     mostrarReportePromedios();
                     break;
+                
+                case 10:
+                    System.out.println("Saliendo del sistema...");
+                    break;
+                
+                default:
+                    System.out.println("\nOpcion invalida");
             }
         } while (opcion != 10);
     }
