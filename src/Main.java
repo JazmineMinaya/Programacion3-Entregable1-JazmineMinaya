@@ -236,6 +236,19 @@ public class Main {
         }
     }
 
+    public static void mostrarDatosMateria() {
+        System.out.println("\nLISTA DE MATERIAS:");
+
+        if (listaMaterias.isEmpty()) {
+            System.out.println("\nNo hay materias registradas en el sistema");
+        }
+        else {
+            for (Materia m : listaMaterias) {
+                Materia.mostrarDatos(m);
+            }
+        }
+    }
+
     public static void main(String[] args) {
     }
 }

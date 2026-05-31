@@ -34,4 +34,10 @@ public class Materia {
     public void setCantidadCreditos(int cantidadCreditos) {
         this.cantidadCreditos = cantidadCreditos;
     }
+
+    public static void mostrarDatos(Materia materia) {
+        System.out.println("\nCodigo: " + materia.getCodigoMateria());
+        System.out.println("Nombre: " + materia.getNombreMateria());
+        System.out.println("Cantidad de creditos: " + materia.getCantidadCreditos());
+    }
 }
