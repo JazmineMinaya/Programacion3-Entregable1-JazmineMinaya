@@ -79,4 +79,13 @@ public class Estudiante {
     public void setFechaInscripcion(LocalDate fechaInscripcion) {
         this.fechaInscripcion = fechaInscripcion;
     }
+
+    public static void mostrarDatos(Estudiante estudiante) {
+        System.out.println("\nMatricula: " + estudiante.getMatricula());
+        System.out.println("Nombre: " + estudiante.getNombreEstudiante());
+        System.out.println("Apellido: " + estudiante.getApellidoEstudiante());
+        System.out.println("Edad: " + estudiante.getEdad());
+        System.out.println("Carrera: " + estudiante.getCarrera());
+        System.out.println("Fecha de inscripcion: " + estudiante.getFechaInscripcion());
+    }
 }

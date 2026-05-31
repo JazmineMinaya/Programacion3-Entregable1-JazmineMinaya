@@ -223,6 +223,19 @@ public class Main {
         } while (opcion != 3);
 
     }
+
+    public static void mostrarDatosEstudiante() {
+        if (listaEstudiantes.isEmpty()) {
+            System.out.println("\nNo hay estudiantes registrados en el sistema");
+        }
+        else {
+            System.out.println("\nLISTA DE ESTUDIANTES:");
+            for (Estudiante est : listaEstudiantes) {
+                Estudiante.mostrarDatos(est);
+            }
+        }
+    }
+
     public static void main(String[] args) {
     }
 }
