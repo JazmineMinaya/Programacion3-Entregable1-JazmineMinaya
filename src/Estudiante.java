@@ -88,4 +88,21 @@ public class Estudiante {
         System.out.println("Carrera: " + estudiante.getCarrera());
         System.out.println("Fecha de inscripcion: " + estudiante.getFechaInscripcion());
     }
+
+    public static double calificacionesEstudiante(Estudiante estudiante) {
+        double sumatoriaCalificaciones = 0;
+        int contadorMaterias = 0;
+
+        for (Calificacion calificacionEstudiante : estudiante.getCalificaciones()) {
+            sumatoriaCalificaciones += calificacionEstudiante.getCalificacion();
+            contadorMaterias++;
+        }
+
+        if (contadorMaterias == 0)
+            return 0;
+
+        double promedio = sumatoriaCalificaciones / contadorMaterias;
+
+        return promedio;
+    }
 }

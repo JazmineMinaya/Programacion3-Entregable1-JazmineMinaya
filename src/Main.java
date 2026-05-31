@@ -249,6 +249,26 @@ public class Main {
         }
     }
 
+    public static void mostrarReportePromedios() {
+        System.out.println("\nREPORTE DE PROMEDIOS:");
+
+        for (Estudiante est : listaEstudiantes) {
+            if (listaEstudiantes.isEmpty()) {
+                System.out.println("\nNo hay estudiantes registrados en el sistema");
+            }
+            else {
+                double promedio = Estudiante.calificacionesEstudiante(est);
+                System.out.println("\nEstudiante " + est.getNombreEstudiante() + " " + est.getApellidoEstudiante() + " (" + est.getMatricula() + "):");
+                System.out.println("\tPromedio: " + promedio);
+                
+                if (promedio >= 70) 
+                    System.out.println("\tEstudiante aprobado");
+                else
+                    System.out.println("\tEstudiante reprobado");
+            }
+        }
+    }
+
     public static void main(String[] args) {
         int opcion = 0;
 
@@ -290,6 +310,10 @@ public class Main {
                 
                 case 8:
                     mostrarDatosMateria();
+                    break;
+                
+                case 9:
+                    mostrarReportePromedios();
                     break;
             }
         } while (opcion != 10);
