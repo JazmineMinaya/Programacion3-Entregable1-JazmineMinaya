@@ -63,7 +63,7 @@ public class Main {
         System.out.print("Ingrese el nombre: ");
         String nombreProfesor = scanner.nextLine();
 
-        System.out.print("Ingrese el apellido:  ");
+        System.out.print("Ingrese el apellido: ");
         String apellidoProfesor = scanner.nextLine();
 
         System.out.print("Ingrese la especialidad: ");
@@ -129,6 +129,8 @@ public class Main {
         }
 
         estudianteMateriaAsignar.getMaterias().add(materiaAsignar);
+
+        System.out.println("\nEl estudiante ha sido asignado a la materia");
     }
 
     public static void registrarCalificacion() {
