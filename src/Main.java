@@ -50,6 +50,8 @@ public class Main {
         Estudiante estudiante = new Estudiante(matricula, nombreEstudiante, apellidoEstudiante, edad, carrera, fechaInscripcion);
 
         listaEstudiantes.add(estudiante);
+
+        System.out.println("\nEl estudiante ha sido registrado en el sistema");
     }
 
     public static void registrarProfesor() {
@@ -70,6 +72,8 @@ public class Main {
         Profesor profesor = new Profesor(codigoProfesor, nombreProfesor, apellidoProfesor, especialidad);
 
         listaProfesores.add(profesor);
+
+        System.out.println("\nEl profesor ha sido registrado en el sistema");
     }
 
     public static void registrarMateria() {
@@ -88,6 +92,8 @@ public class Main {
         Materia materia = new Materia(codigoMateria, nombreMateria, cantidadCreditos);
 
         listaMaterias.add(materia);
+
+        System.out.println("\nLa materia ha sido registrado en el sistema");
     }
 
     public static Materia buscarCodigoMateria(String materia) {
@@ -108,7 +114,7 @@ public class Main {
         Materia materiaAsignar = buscarCodigoMateria(codigoMateriaAsignar);
 
         if (materiaAsignar == null) {
-            System.out.println("\nMateria no encontrada");
+            System.out.println("\nMateria no resgistrada en el sistema");
             return;
         }
 
@@ -118,7 +124,7 @@ public class Main {
         Estudiante estudianteMateriaAsignar = buscarEstudianteMatricula(matriculaEstudiante);
 
         if (estudianteMateriaAsignar == null) {
-            System.out.println("\nEstudiante no encontrado");
+            System.out.println("\nEstudiante no registrado en el sistema");
             return;
         }
 
@@ -134,7 +140,7 @@ public class Main {
         Estudiante estudianteCalificar = buscarEstudianteMatricula(matriculaCalificar);
 
         if (estudianteCalificar == null) {
-            System.out.println("\nMatricula no encontrada");
+            System.out.println("\nEstudiante no registrado en el sistema");
             return;
         }
 
@@ -144,7 +150,7 @@ public class Main {
         Materia materiaCalificar = buscarCodigoMateria(codigoMateriaCalificar);
 
         if (materiaCalificar == null) {
-            System.out.println("\nMateria no encontrada");
+            System.out.println("\nMateria no registrada en el sistema");
             return;
         }
         else if (!estudianteCalificar.getMaterias().contains(materiaCalificar)) {
@@ -223,6 +229,7 @@ public class Main {
                     break;
                 
                 case 3: 
+                    System.out.println("\nSaliendo al menu principal...");
                     break;
                 
                 default:
