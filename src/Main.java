@@ -335,7 +335,7 @@ public class Main {
                     break;
                 
                 case 10:
-                    System.out.println("Saliendo del sistema...");
+                    System.out.println("\nSaliendo del sistema...");
                     break;
                 
                 default:
