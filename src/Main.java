@@ -147,10 +147,19 @@ public class Main {
             System.out.println("\nMateria no encontrada");
             return;
         }
+        else if (!estudianteCalificar.getMaterias().contains(materiaCalificar)) {
+            System.out.println("\nEl estudiante no tiene asignada esta materia");
+            return;
+        }
 
         System.out.print("Ingrese la calificacion: ");
         double nota = scanner.nextDouble();
         scanner.nextLine();
+
+        if (nota < 0 || nota > 100) {
+            System.out.println("\nLa calificacion debe estar entre 0 y 100");
+            return;
+        }
 
         Calificacion calificacion = new Calificacion(materiaCalificar, nota);
 
