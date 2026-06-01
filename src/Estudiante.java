@@ -1,10 +1,8 @@
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class Estudiante {
+public class Estudiante extends Persona{
     private String matricula;
-    private String nombreEstudiante;
-    private String apellidoEstudiante;
     private int edad;
     private String carrera;
     private LocalDate fechaInscripcion;
@@ -13,9 +11,8 @@ public class Estudiante {
     private ArrayList<Calificacion> calificaciones;
 
     public Estudiante() {
+        super();
         setMatricula("");
-        setNombreEstudiante("");
-        setApellidoEstudiante("");
         setEdad(0);
         setCarrera("");
         setFechaInscripcion(null);
@@ -25,9 +22,8 @@ public class Estudiante {
     }
 
     public Estudiante(String matricula, String nombreEstudiante, String apellidoEstudiante, int edad, String carrera, LocalDate fechaInscripcion) {
+        super(nombreEstudiante, apellidoEstudiante);
         setMatricula(matricula);
-        setNombreEstudiante(nombreEstudiante);
-        setApellidoEstudiante(apellidoEstudiante);
         setEdad(edad);
         setCarrera(carrera);
         setFechaInscripcion(fechaInscripcion);
@@ -38,12 +34,6 @@ public class Estudiante {
 
     public String getMatricula() {
         return matricula;
-    }
-    public String getNombreEstudiante() {
-        return nombreEstudiante;
-    }
-    public String getApellidoEstudiante() {
-        return apellidoEstudiante;
     }
     public int getEdad() {
         return edad;
@@ -64,12 +54,6 @@ public class Estudiante {
     public void setMatricula(String matricula) {
         this.matricula = matricula;
     }
-    public void setNombreEstudiante(String nombreEstudiante) {
-        this.nombreEstudiante = nombreEstudiante;
-    }
-    public void setApellidoEstudiante(String apellidoEstudiante) {
-        this.apellidoEstudiante = apellidoEstudiante;
-    }
     public void setEdad(int edad) {
         this.edad = edad;
     }
@@ -82,8 +66,8 @@ public class Estudiante {
 
     public static void mostrarDatos(Estudiante estudiante) {
         System.out.println("\nMatricula: " + estudiante.getMatricula());
-        System.out.println("Nombre: " + estudiante.getNombreEstudiante());
-        System.out.println("Apellido: " + estudiante.getApellidoEstudiante());
+        System.out.println("Nombre: " + estudiante.getNombre());
+        System.out.println("Apellido: " + estudiante.getApellido());
         System.out.println("Edad: " + estudiante.getEdad());
         System.out.println("Carrera: " + estudiante.getCarrera());
         System.out.println("Fecha de inscripcion: " + estudiante.getFechaInscripcion());

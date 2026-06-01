@@ -168,7 +168,7 @@ public class Main {
 
     public static Estudiante buscarEstudianteNombre(String nombre) {
         for (Estudiante est : listaEstudiantes) {
-            if (est.getNombreEstudiante().equalsIgnoreCase(nombre)) {
+            if (est.getNombre().equalsIgnoreCase(nombre)) {
                 return est;
             }
         }
@@ -258,7 +258,7 @@ public class Main {
             }
             else {
                 double promedio = Estudiante.calificacionesEstudiante(est);
-                System.out.println("\nEstudiante " + est.getNombreEstudiante() + " " + est.getApellidoEstudiante() + " (" + est.getMatricula() + "):");
+                System.out.println("\nEstudiante " + est.getNombre() + " " + est.getApellido() + " (" + est.getMatricula() + "):");
                 System.out.println("\tPromedio: " + promedio);
                 
                 if (promedio >= 70) 
